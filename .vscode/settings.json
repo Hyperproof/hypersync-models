@@ -7,8 +7,5 @@
     "javascriptreact",
     "html",
     "typescriptreact"
-  ],
-  "[shellscript]": {
-    "editor.defaultFormatter": "foxundermoon.shell-format"
-  }
+  ]
 }
