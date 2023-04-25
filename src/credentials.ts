@@ -3,10 +3,10 @@
  * provide credentials step of connecting a Hypersync app.
  */
 export enum CredentialFieldType {
-  GROUP = 'group',
-  HIDDEN = 'hidden',
-  PASSWORD = 'password',
-  SELECT = 'select',
-  TEXT = 'text',
-  TEXT_AREA = 'textArea'
+  Group = 'group',
+  Hidden = 'hidden',
+  Password = 'password',
+  Select = 'select',
+  Text = 'text',
+  TextArea = 'textArea'
 }

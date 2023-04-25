@@ -4,13 +4,13 @@ import { DataValue, DataValueMap } from './data';
  * Enumeration of the types of fields that can be used during the
  * criteria selection process.
  */
-export enum FieldType {
-  PAIRED_SELECT = 'pairedSelect',
-  SELECT = 'select',
-  TEXT = 'text',
-  SEARCH = 'search',
-  RADIO = 'radio',
-  KEY_VALUE_SET = 'keyValueSet'
+export enum HypersyncCriteriaFieldType {
+  PairedSelect = 'pairedSelect',
+  Select = 'select',
+  Text = 'text',
+  Search = 'search',
+  Radio = 'radio',
+  KeyValueSet = 'keyValueSet'
 }
 
 /**
@@ -39,7 +39,7 @@ export interface ISelectOption {
  * Data used to create and configure an ICriteriaField.
  */
 export interface ICriteriaFieldConfig {
-  type: FieldType;
+  type: HypersyncCriteriaFieldType;
   property: string;
   label: string;
   isRequired: boolean;
