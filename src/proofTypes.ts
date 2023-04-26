@@ -2,29 +2,29 @@ import { IProofCriterionRef } from './criteria';
 import { DataValueMap } from './data';
 
 export enum HypersyncDataFormat {
-  STACKED = 'stacked',
-  TABULAR = 'tabular',
-  CUSTOM = 'custom'
+  Stacked = 'stacked',
+  Tabular = 'tabular',
+  Custom = 'custom'
 }
 
 export enum HypersyncPeriod {
-  DAILY = 'daily',
-  WEEKLY = 'weekly',
-  MONTHLY = 'monthly',
-  QUARTERLY = 'quarterly',
-  YEARLY = 'yearly'
+  Daily = 'daily',
+  Weekly = 'weekly',
+  Monthly = 'monthly',
+  Quarterly = 'quarterly',
+  Yearly = 'yearly'
 }
 
 export enum HypersyncPageOrientation {
-  PORTRAIT = 'Portrait',
-  LANDSCAPE = 'Landscape'
+  Portrait = 'Portrait',
+  Landscape = 'Landscape'
 }
 
 export enum HypersyncFieldType {
-  TEXT = 'text',
-  NUMBER = 'number',
-  BOOLEAN = 'boolean',
-  DATE = 'date'
+  Text = 'text',
+  Number = 'number',
+  Boolean = 'boolean',
+  Date = 'date'
 }
 
 export enum HypersyncFieldFormat {
