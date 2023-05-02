@@ -16,8 +16,8 @@ export enum HypersyncPeriod {
 }
 
 export enum HypersyncPageOrientation {
-  Portrait = 'Portrait',
-  Landscape = 'Landscape'
+  Portrait = 'portrait',
+  Landscape = 'landscape'
 }
 
 export enum HypersyncFieldType {
@@ -36,10 +36,10 @@ export enum HypersyncFieldFormat {
  * selected by the user.
  */
 export interface IProofType {
-  proofType: string;
   label: string;
   criteria: DataValueMap;
   isJson: boolean;
+  isCustom: boolean;
 }
 
 /**
