@@ -50,6 +50,7 @@ export interface ICriteriaFieldConfig {
   valueProperty?: string;
   labelProperty?: string;
   fixedValues?: ISelectOption[];
+  defaultCriteriaOrder?: number;
 }
 
 /**
