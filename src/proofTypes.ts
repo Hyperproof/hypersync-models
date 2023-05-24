@@ -37,7 +37,7 @@ export enum HypersyncFieldFormat {
  */
 export interface IProofType {
   label: string;
-  criteria: DataValueMap;
+  category?: string;
   isJson: boolean;
   isCustom: boolean;
 }
