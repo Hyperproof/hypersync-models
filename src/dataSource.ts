@@ -38,7 +38,6 @@ export interface IDataSet {
   transform?: Transform;
   sort?: SortClause[];
   result: 'array' | 'object';
-  isCustom?: boolean;
 }
 
 /**
