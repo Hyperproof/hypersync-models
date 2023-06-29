@@ -39,7 +39,6 @@ export interface IProofType {
   label: string;
   category?: string;
   isJson: boolean;
-  isCustom: boolean;
 }
 
 /**
