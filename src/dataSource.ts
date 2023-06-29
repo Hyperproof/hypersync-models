@@ -41,6 +41,11 @@ export interface IDataSet {
 }
 
 /**
+ * Maps a value to a message that can be rendered in a generated proof.
+ */
+export type ValueLookup = { [value: string]: string };
+
+/**
  * Configuration information stored in a JSON file that is used as
  * the input to a RestDataSourceBase instance.
  */
@@ -49,7 +54,14 @@ export interface IRestDataSourceConfig {
   dataSets: {
     [name: string]: IDataSet;
   };
+  valueLookups?: {
+    [name: string]: ValueLookup;
+  };
+
+  /**
+   * @deprecated This property has been deprecated in favor of `valueLookups`
+   */
   messages?: {
-    [name: string]: { [key: string]: string };
+    [name: string]: ValueLookup;
   };
 }
