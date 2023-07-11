@@ -88,28 +88,12 @@ export interface IProofSpec {
   webPageUrl: string;
 }
 
-export interface IOverrideSpec {
-  period?: HypersyncPeriod;
-  useVersioning?: boolean;
-  suggestedName?: string;
-  format?: HypersyncDataFormat;
-  orientation?: HypersyncPageOrientation;
-  title?: string;
-  subtitle?: string;
-  dataSet?: string;
-  dataSetParams?: DataValueMap;
-  noResultsMessage?: string;
-  lookups?: IProofSpecLookup[];
-  fields?: IHypersyncField[];
-  webPageUrl?: string;
-}
-
 export interface IProofSpecOverride {
   condition: {
     value: string;
     criteria: string;
   };
-  proofSpec: IOverrideSpec;
+  proofSpec: Partial<IProofSpec>;
 }
 
 export interface IHypersyncDefinition {
