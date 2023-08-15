@@ -85,7 +85,7 @@ export interface IProofSpec {
   noResultsMessage?: string;
   lookups?: IProofSpecLookup[];
   fields: IHypersyncField[];
-  webPageUrl: string;
+  webPageUrl?: string;
 }
 
 export interface IProofSpecOverride {
