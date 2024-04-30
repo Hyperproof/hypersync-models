@@ -1,5 +1,7 @@
 import { DataValue, DataValueMap } from './data';
 
+import { ISelectOption, SchemaCategory } from '@hyperproof/integration-sdk';
+
 /**
  * Enumeration of the types of fields that can be used during the
  * criteria selection process.
@@ -28,14 +30,6 @@ export type HypersyncCriteria = {
 };
 
 /**
- * An option that may be chosen in a select control.
- */
-export interface ISelectOption {
-  value: string | number;
-  label: string;
-}
-
-/**
  * Data used to create and configure an ICriteriaField.
  */
 export interface ICriteriaFieldConfig {
@@ -50,6 +44,7 @@ export interface ICriteriaFieldConfig {
   valueProperty?: string;
   labelProperty?: string;
   fixedValues?: ISelectOption[];
+  schemaCategory?: SchemaCategory;
 }
 
 /**

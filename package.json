@@ -1,10 +1,10 @@
 {
   "name": "@hyperproof/hypersync-models",
-  "version": "4.2.0",
+  "version": "5.0.0",
   "description": "Hypersync Models",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Hyperproof/hypersync-models"
+    "url": "git+https://github.com/Hyperproof/hypersync-models.git"
   },
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -15,7 +15,9 @@
   "engines": {
     "node": "^16.19.1 || ^18.17.1"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@hyperproof/integration-sdk": "1.0.1"
+  },
   "devDependencies": {
     "@types/node": "^16.18.48",
     "@typescript-eslint/eslint-plugin": "^5.25.0",

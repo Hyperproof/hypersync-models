@@ -4,7 +4,14 @@
  * also be used to filter, sort, and otherwise parameterize the data in a
  * generated Hypersync proof.
  */
-export type DataValue = string | number | boolean | BigInt | Date | undefined;
+export type DataValue =
+  | string
+  | number
+  | boolean
+  | BigInt
+  | Date
+  | undefined
+  | null;
 
 /**
  * Type of data that is returned from an external service.
