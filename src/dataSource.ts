@@ -1,6 +1,6 @@
 import { DataValue, DataValueMap } from './data';
 
-import { HttpMethod } from '@hyperproof/integration-sdk';
+export type DataSetMethod = 'GET' | 'POST' | 'PATCH';
 
 export type Predicate = { leftProperty: string; rightProperty: string }[];
 
@@ -112,7 +112,7 @@ export interface IDataSet {
   description: string;
   documentation?: string;
   url: string;
-  method?: HttpMethod;
+  method?: DataSetMethod;
   pagingScheme?: PagingScheme;
   body?: object | string;
   property?: string;

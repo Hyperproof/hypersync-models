@@ -1,6 +1,13 @@
 import { DataValue, DataValueMap } from './data';
 
-import { ISelectOption, SchemaCategory } from '@hyperproof/integration-sdk';
+/**
+ * Enumeration of schema categories used to filter criteria fields
+ * and Hypersync proof types in Hyperproof.
+ */
+export enum SchemaCategory {
+  UarDirectory = 'uarDirectory',
+  UarApplication = 'uarApplication'
+}
 
 /**
  * Enumeration of the types of fields that can be used during the
@@ -28,6 +35,14 @@ export type HypersyncCriteria = {
   proofType?: string;
   [name: string]: HypersyncCriteriaValue;
 };
+
+/**
+ * An option that may be chosen in a select control.
+ */
+export interface ISelectOption {
+  value: string | number;
+  label: string;
+}
 
 /**
  * Data used to create and configure an ICriteriaField.
