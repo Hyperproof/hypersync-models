@@ -1,6 +1,15 @@
 import { DataValue, DataValueMap } from './data';
 
 /**
+ * Enumeration of schema categories used to filter criteria fields
+ * and Hypersync proof types in Hyperproof.
+ */
+export enum SchemaCategory {
+  UarDirectory = 'uarDirectory',
+  UarApplication = 'uarApplication'
+}
+
+/**
  * Enumeration of the types of fields that can be used during the
  * criteria selection process.
  */
@@ -50,6 +59,7 @@ export interface ICriteriaFieldConfig {
   valueProperty?: string;
   labelProperty?: string;
   fixedValues?: ISelectOption[];
+  schemaCategory?: SchemaCategory;
 }
 
 /**

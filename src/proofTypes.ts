@@ -86,6 +86,7 @@ export interface IProofSpec {
   lookups?: IProofSpecLookup[];
   fields: IHypersyncField[];
   webPageUrl?: string;
+  autoLayout?: boolean;
 }
 
 export interface IProofSpecOverride {
