@@ -8,7 +8,7 @@ export type DataValue =
   | string
   | number
   | boolean
-  | BigInt
+  | bigint
   | Date
   | undefined
   | null;
