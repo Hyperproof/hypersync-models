@@ -2,6 +2,7 @@
   "name": "@hyperproof/hypersync-models",
   "version": "5.1.0",
   "description": "Hypersync Models",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Hyperproof/hypersync-models.git"
