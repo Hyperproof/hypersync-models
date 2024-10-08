@@ -31,13 +31,21 @@ export interface IDataSetLookup {
 export enum PagingType {
   NextToken = 'nextToken',
   OffsetAndLimit = 'offsetAndLimit',
-  PageBased = 'pageBased'
+  PageBased = 'pageBased',
+  GraphQLConnections = 'graphqlConnections'
 }
 
 export enum PageUntilCondition {
   NoDataLeft = 'noDataLeft',
   NoNextToken = 'noNextToken',
-  ReachTotalCount = 'reachTotalCount'
+  ReachTotalCount = 'reachTotalCount',
+  NoNextPage = 'noNextPage'
+}
+
+export enum NextTokenType {
+  Token = 'token',
+  Url = 'url',
+  SearchArray = 'searchArray'
 }
 
 /**
@@ -69,10 +77,16 @@ export type NextTokenRequest = {
   tokenParameter?: string;
 };
 
+export type GraphQLConnectionsRequest = {
+  limitParameter: 'first' | string;
+  limitValue: number;
+};
+
 export type PagingScheme =
   | INextTokenScheme
   | IPageBasedScheme
-  | IOffsetAndLimitScheme;
+  | IOffsetAndLimitScheme
+  | IGraphQLConnectionsScheme;
 
 export interface INextTokenScheme {
   type: PagingType.NextToken;
@@ -81,7 +95,7 @@ export interface INextTokenScheme {
     nextToken: string;
   };
   pageUntil: PageUntilCondition.NoNextToken;
-  tokenType: 'token' | 'url';
+  tokenType: NextTokenType;
   level?: PagingLevel;
 }
 
@@ -105,6 +119,16 @@ export interface IOffsetAndLimitScheme {
   level?: PagingLevel;
 }
 
+export interface IGraphQLConnectionsScheme {
+  type: PagingType.GraphQLConnections;
+  request: GraphQLConnectionsRequest;
+  response: {
+    pageInfo: string;
+  };
+  pageUntil: PageUntilCondition.NoNextPage;
+  level?: PagingLevel;
+}
+
 /**
  * Data set information stored in the client configuration file.
  */
@@ -114,6 +138,7 @@ export interface IDataSet {
   url: string;
   method?: DataSetMethod;
   pagingScheme?: PagingScheme;
+  headers?: { [key: string]: string };
   body?: object | string;
   property?: string;
   query?: Query;

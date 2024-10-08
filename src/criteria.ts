@@ -45,6 +45,15 @@ export interface ISelectOption {
 }
 
 /**
+ * Defines information for validating a criteria field.
+ */
+export interface IValidation {
+  type: ValidationTypeString;
+  regex?: string;
+  errorMessage?: string;
+}
+
+/**
  * Data used to create and configure an ICriteriaField.
  */
 export interface ICriteriaFieldConfig {
@@ -60,6 +69,8 @@ export interface ICriteriaFieldConfig {
   labelProperty?: string;
   fixedValues?: ISelectOption[];
   schemaCategory?: SchemaCategory;
+  isMulti?: boolean;
+  validation?: IValidation;
 }
 
 /**
@@ -77,3 +88,17 @@ export interface IProofCriterionRef {
   name: string;
   page: number;
 }
+export enum ValidationTypes {
+  alphaNumeric = 'alphaNumeric',
+  regex = 'regex',
+  url = 'url',
+  urlOrHost = 'urlOrHost',
+  uuid = 'uuid'
+}
+
+export type ValidationTypeString =
+  | 'alphaNumeric'
+  | 'regex'
+  | 'url'
+  | 'urlOrHost'
+  | 'uuid';
