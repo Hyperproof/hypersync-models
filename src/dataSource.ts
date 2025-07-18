@@ -1,6 +1,17 @@
 import { DataValue, DataValueMap } from './data';
 
-export type DataSetMethod = 'GET' | 'POST' | 'PATCH';
+export enum DataSetMethod {
+  GET = 'GET',
+  PATCH = 'PATCH',
+  POST = 'POST',
+  PUT = 'PUT'
+}
+
+export const DataSetMethodsWithBody = [
+  DataSetMethod.PATCH,
+  DataSetMethod.POST,
+  DataSetMethod.PUT
+];
 
 export type Predicate = { leftProperty: string; rightProperty: string }[];
 
@@ -26,6 +37,7 @@ export interface IDataSetLookup {
   alias: string;
   dataSet: string;
   dataSetParams?: DataValueMap;
+  delaySeconds?: number;
 }
 
 export enum PagingType {
@@ -72,8 +84,8 @@ export type OffsetAndLimitRequest = {
 };
 
 export type NextTokenRequest = {
-  limitParameter: string;
-  limitValue: number;
+  limitParameter?: string;
+  limitValue?: number;
   tokenParameter?: string;
 };
 
@@ -136,6 +148,7 @@ export interface IDataSet {
   description: string;
   documentation?: string;
   url: string;
+  isAbsoluteUrl?: boolean;
   method?: DataSetMethod;
   pagingScheme?: PagingScheme;
   headers?: { [key: string]: string };
@@ -147,7 +160,7 @@ export interface IDataSet {
   filter?: FilterClause[];
   transform?: Transform;
   sort?: SortClause[];
-  result: 'array' | 'object' | 'nonProcessed';
+  result: 'array' | 'object' | 'unprocessed';
 }
 
 /**

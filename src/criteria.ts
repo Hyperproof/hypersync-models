@@ -19,7 +19,8 @@ export enum HypersyncCriteriaFieldType {
   Text = 'text',
   Search = 'search',
   Radio = 'radio',
-  KeyValueSet = 'keyValueSet'
+  KeyValueSet = 'keyValueSet',
+  SelectSavedCriteria = 'selectSavedCriteria'
 }
 
 /**
@@ -90,6 +91,7 @@ export interface IProofCriterionRef {
 }
 export enum ValidationTypes {
   alphaNumeric = 'alphaNumeric',
+  email = 'email',
   regex = 'regex',
   url = 'url',
   urlOrHost = 'urlOrHost',
@@ -98,6 +100,7 @@ export enum ValidationTypes {
 
 export type ValidationTypeString =
   | 'alphaNumeric'
+  | 'email'
   | 'regex'
   | 'url'
   | 'urlOrHost'
