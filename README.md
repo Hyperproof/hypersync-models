@@ -4,6 +4,10 @@ Models, types and enumerations used by Hypersyncs.
 
 ## Release Notes
 
+### 5.2.0
+
+- Update Criteria and DataSource models
+
 ### 5.1.0
 
 - Upgrade TypeScript to version 5.5.4
