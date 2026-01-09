@@ -72,6 +72,33 @@ export interface IHypersyncField {
   format?: HypersyncFieldFormat;
 }
 
+export enum IteratorSource {
+  DataSet = 'dataSet',
+  Criteria = 'criteria'
+}
+
+export interface BaseIteratorDefinition {
+  layer: number;
+  iterandKey: string;
+  subArraySize?: number;
+}
+
+export interface DataSetSourcedIterator extends BaseIteratorDefinition {
+  source: IteratorSource.DataSet;
+  dataSet: string;
+  dataSetParams?: DataValueMap;
+}
+
+export interface CriteriaSourcedIterator extends BaseIteratorDefinition {
+  source: IteratorSource.Criteria;
+  criteriaProperty: string;
+  criteriaTransformer: string;
+}
+
+export type DataSetIteratorDefinition =
+  | DataSetSourcedIterator
+  | CriteriaSourcedIterator;
+
 export interface IProofSpec {
   period: HypersyncPeriod;
   useVersioning: boolean;
@@ -82,6 +109,7 @@ export interface IProofSpec {
   subtitle: string;
   dataSet: string;
   dataSetParams?: DataValueMap;
+  dataSetIterator?: DataSetIteratorDefinition[];
   noResultsMessage?: string;
   lookups?: IProofSpecLookup[];
   fields: IHypersyncField[];
