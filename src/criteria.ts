@@ -72,6 +72,7 @@ export interface ICriteriaFieldConfig {
   schemaCategory?: SchemaCategory;
   isMulti?: boolean;
   validation?: IValidation;
+  savedCriteriaSettings?: DataValueMap;
 }
 
 /**
@@ -89,6 +90,11 @@ export interface IProofCriterionRef {
   name: string;
   page: number;
 }
+
+export interface ICriteriaSearchInput {
+  [criterion: string]: { value: string; offset: string };
+}
+
 export enum ValidationTypes {
   alphaNumeric = 'alphaNumeric',
   email = 'email',

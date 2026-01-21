@@ -1,6 +1,6 @@
 {
   "name": "@hyperproof/hypersync-models",
-  "version": "5.2.0",
+  "version": "6.0.0-beta",
   "description": "Hypersync Models",
   "license": "MIT",
   "repository": {
@@ -14,7 +14,7 @@
     "lint": "./node_modules/eslint/bin/eslint.js 'src/**/*.{js,ts}' --max-warnings 0"
   },
   "engines": {
-    "node": "^16.19.1 || ^18.17.1"
+    "node": "^22.0.0"
   },
   "dependencies": {},
   "devDependencies": {

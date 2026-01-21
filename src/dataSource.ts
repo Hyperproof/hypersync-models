@@ -38,6 +38,7 @@ export interface IDataSetLookup {
   dataSet: string;
   dataSetParams?: DataValueMap;
   delaySeconds?: number;
+  continueOnError?: boolean;
 }
 
 export enum PagingType {
