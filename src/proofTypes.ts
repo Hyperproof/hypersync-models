@@ -1,5 +1,6 @@
 import { IProofCriterionRef } from './criteria';
 import { DataValueMap } from './data';
+import { SortClause } from './dataSource';
 
 export enum HypersyncDataFormat {
   Stacked = 'stacked',
@@ -115,6 +116,7 @@ export interface IProofSpec {
   fields: IHypersyncField[];
   webPageUrl?: string;
   autoLayout?: boolean;
+  sort?: SortClause[];
 }
 
 export interface IProofSpecOverride {
