@@ -4,14 +4,6 @@ Models, types and enumerations used by Hypersyncs.
 
 ## Release Notes
 
-### 6.0.0
-
-- **Breaking:** Updated to Node.js 22
-- **Breaking:** Moved `CredentialFieldType` enum to `@hyperproof/integration-sdk`
-- Added `IteratorSource` enum and iterator definition types for iterative proof generation
-- Added `savedCriteriaSettings` and `ICriteriaSearchInput` for criteria search functionality
-- Added `continueOnError` property to `IDataSetLookup`
-
 ### 5.2.0
 
 - Update Criteria and DataSource models
