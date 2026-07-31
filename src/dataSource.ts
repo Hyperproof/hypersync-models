@@ -7,11 +7,7 @@ export enum DataSetMethod {
   PUT = 'PUT'
 }
 
-export const DataSetMethodsWithBody = [
-  DataSetMethod.PATCH,
-  DataSetMethod.POST,
-  DataSetMethod.PUT
-];
+export const DataSetMethodsWithBody = [DataSetMethod.PATCH, DataSetMethod.POST, DataSetMethod.PUT];
 
 export type Predicate = { leftProperty: string; rightProperty: string }[];
 
@@ -95,11 +91,7 @@ export type GraphQLConnectionsRequest = {
   limitValue: number;
 };
 
-export type PagingScheme =
-  | INextTokenScheme
-  | IPageBasedScheme
-  | IOffsetAndLimitScheme
-  | IGraphQLConnectionsScheme;
+export type PagingScheme = INextTokenScheme | IPageBasedScheme | IOffsetAndLimitScheme | IGraphQLConnectionsScheme;
 
 export interface INextTokenScheme {
   type: PagingType.NextToken;
@@ -162,6 +154,7 @@ export interface IDataSet {
   transform?: Transform;
   sort?: SortClause[];
   result: 'array' | 'object' | 'unprocessed';
+  keepEmptyRows?: boolean;
 }
 
 /**
