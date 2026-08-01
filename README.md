@@ -4,6 +4,16 @@ Models, types and enumerations used by Hypersyncs.
 
 ## Release Notes
 
+### 7.0.0
+
+- **Breaking:** Removed `autoLayout` from `IProofSpec`. Layout is now applied centrally to every proof by `@hyperproof/hypersync-sdk`, so the per-spec opt-in no longer exists
+- Added `IProofTypeCatalogEntry` for the proof type catalog returned by `@hyperproof/hypersync-sdk`
+- Added `hidden` to `ISelectOption` for values that are valid but not offered in the UI dropdown
+- Added `keepEmptyRows` to `IDataSet` to opt out of the automatic drop-empty-rows pass
+- Added `YearToDate` to `HypersyncPeriod`
+- Added `apiFamily` to `IProofType`
+- Added `sourceDateTimeZone` to `IProofSpec` for date-only sources that would otherwise shift under the user's time zone
+
 ### 6.0.0
 
 - **Breaking:** Updated to Node.js 22
