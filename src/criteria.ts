@@ -43,6 +43,12 @@ export type HypersyncCriteria = {
 export interface ISelectOption {
   value: string | number;
   label: string;
+  /**
+   * When true the option is a valid value for the field (accepted by server-side credential validation) but is not
+   * offered in the UI dropdown. Used for values that are set programmatically rather than chosen by the user - e.g.
+   * a region that is auto-discovered from the vendor's response but must still pass the SSRF field allow-list.
+   */
+  hidden?: boolean;
 }
 
 /**
@@ -104,10 +110,4 @@ export enum ValidationTypes {
   uuid = 'uuid'
 }
 
-export type ValidationTypeString =
-  | 'alphaNumeric'
-  | 'email'
-  | 'regex'
-  | 'url'
-  | 'urlOrHost'
-  | 'uuid';
+export type ValidationTypeString = 'alphaNumeric' | 'email' | 'regex' | 'url' | 'urlOrHost' | 'uuid';

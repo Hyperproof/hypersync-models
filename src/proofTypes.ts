@@ -1,4 +1,4 @@
-import { IProofCriterionRef } from './criteria';
+import { IProofCriterionRef, SchemaCategory } from './criteria';
 import { DataValueMap } from './data';
 import { SortClause } from './dataSource';
 
@@ -13,7 +13,8 @@ export enum HypersyncPeriod {
   Weekly = 'weekly',
   Monthly = 'monthly',
   Quarterly = 'quarterly',
-  Yearly = 'yearly'
+  Yearly = 'yearly',
+  YearToDate = 'yearToDate'
 }
 
 export enum HypersyncPageOrientation {
@@ -39,6 +40,7 @@ export enum HypersyncFieldFormat {
 export interface IProofType {
   label: string;
   category?: string;
+  apiFamily?: string;
   isJson: boolean;
 }
 
@@ -47,6 +49,22 @@ export interface IProofType {
  */
 export interface IProofTypeMap {
   [proofType: string]: IProofType;
+}
+
+/**
+ * Interface for a proof type catalog entry returned by the prooftypecatalog route.
+ * Provides a flattened view of proof types with resolved names and category info.
+ */
+export interface IProofTypeCatalogEntry {
+  appId: string;
+  proofType: string;
+  proofTypeName: string;
+  proofCategoryId?: string;
+  proofCategoryName?: string;
+  schemaCategory?: SchemaCategory;
+  fields?: string;
+  hasDynamicFields?: boolean;
+  isActEnabled?: boolean;
 }
 
 /**
@@ -96,9 +114,7 @@ export interface CriteriaSourcedIterator extends BaseIteratorDefinition {
   criteriaTransformer: string;
 }
 
-export type DataSetIteratorDefinition =
-  | DataSetSourcedIterator
-  | CriteriaSourcedIterator;
+export type DataSetIteratorDefinition = DataSetSourcedIterator | CriteriaSourcedIterator;
 
 export interface IProofSpec {
   period: HypersyncPeriod;
@@ -115,8 +131,11 @@ export interface IProofSpec {
   lookups?: IProofSpecLookup[];
   fields: IHypersyncField[];
   webPageUrl?: string;
-  autoLayout?: boolean;
   sort?: SortClause[];
+  // When set, date-typed fields are formatted in this IANA time zone (as
+  // date-only) instead of the user's time zone. Use for sources that return
+  // date-only values where the user-TZ formatter would shift the calendar day.
+  sourceDateTimeZone?: string;
 }
 
 export interface IProofSpecOverride {
